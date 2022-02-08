@@ -5,6 +5,13 @@ header {
     grid-template-rows: 1fr;
 }
 
+header>h1 {
+    border: 1px solid red;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+}
+
 #logo {
     border: 1px solid red;
     grid-column: 1;
@@ -13,6 +20,8 @@ header {
 
 #control {
     border: 1px solid red;
+    grid-column: 3;
+    grid-row: 1;
 }
 
 main {
