@@ -1,0 +1,61 @@
+.cards {
+  border: 1px solid red;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 3.5em;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+  margin: 0.5em;
+}
+
+.card {
+  border: 3px solid black;
+  border-radius: 5px;
+  width: 150px;
+  min-height: 200px;
+}
+
+.card.matched {
+  background-color: green;
+}
+
+.card.unmatched {
+    animation-name: blinking;
+    animation-duration: 150ms;
+    animation-timing-function: step-end;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    border-color: white;
+}
+
+@keyframes blinking {
+    50% {
+        border-color: red;
+    }
+}
+
+.card.unmatched > p {
+  animation-name: emoji-fadeout;
+  animation-duration: 1000ms;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+}
+
+@keyframes emoji-fadeout {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.75;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.25;
+  }
+  100% {
+    opacity: 0;
+  }
+}
