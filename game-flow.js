@@ -40,7 +40,7 @@ function hideModalTimeout() {
 }
 
 function showDivTimerControl() {
-    document.getElementById('timer-control').style.display = 'block';
+    document.getElementById('timer-control').style.visibility = 'visible';
     let startTime = Date.now();
     document.getElementById('timer').innerText = `Time Remaining: ${new Date(gameDurationLimitMS).toISOString().slice(14, 19)}`;
     clearTimeout(objTimer);
@@ -59,7 +59,7 @@ function showDivTimerControl() {
 }
 
 function hideDivTimerControl() {
-    document.getElementById('timer-control').style.display = 'none';
+    document.getElementById('timer-control').style.visibility = 'hidden';
 }
 
 function flowInitializeGame() {
