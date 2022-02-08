@@ -35,7 +35,12 @@ header{
 }
 
 #control {
-    background-color: white;
+    background-color: green;
+    color: white;
+    border: 5px solid black;
+    border-radius: 35px;
+    height: 100px;
+    margin: 5px;
     grid-column: 3;
     grid-row: 1;
     display: flex;
