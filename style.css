@@ -1,6 +1,10 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
 header {
     /* border: 1px solid red; */
-    margin: 0;
     display: grid;
     grid-template-columns: 150px 1fr 240px;
     grid-template-rows: 1fr;
@@ -8,8 +12,6 @@ header {
 
 header>h1 {
     border: 1px solid red;
-    margin: 0;
-    padding: 0.5em;
     text-align: center;
     position: absolute;
     width: 100%;
