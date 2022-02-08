@@ -1,6 +1,6 @@
 * {
     margin: 0px;
-    padding: 0px;
+    padding: 0px;font-family: 'Palanquin Dark', sans-serif;
 }
 
 header{
@@ -9,14 +9,13 @@ header{
 }
 
 #header-content {
-    /* border: 1px solid red; */
     display: grid;
     grid-template-columns: 150px 1fr 240px;
     grid-template-rows: 1fr;
 }
 
 #header-content>h1 {
-    border: 1px solid red;
+    font-family: 'Montserrat', sans-serif;
     text-align: center;
     position: absolute;
     width: 100%;
@@ -26,7 +25,6 @@ header{
 }
 
 #logo {
-    border: 1px solid red;
     background-color: white;
     grid-column: 1;
     grid-row: 1;
@@ -37,7 +35,6 @@ header{
 }
 
 #control {
-    border: 1px solid red;
     background-color: white;
     grid-column: 3;
     grid-row: 1;
@@ -51,16 +48,13 @@ header{
 #btnExitGame {
     font-size: 1.5em;
     border-radius: 10px;
-    margin: 5px;
-    padding: 5px;
+    padding: 0px 10px;
 }
 
 main {
-    /* border: 1px solid red; */
     display: none;
 }
 
 .modal {
-    /* border: 1px solid red; */
     display: none;
 }
