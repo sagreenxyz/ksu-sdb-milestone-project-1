@@ -16,39 +16,51 @@
 </head>
 
 <body>
-    <header>
-        <div id="header-content">
+        <header>
             <h1>Emoji Concentration</h1>
             <div id="logo">Logo</div>
-            <div id="control">
+            <div id="header-right">
                 <div id="timer">Timer</div>
                 <div id="control-button"><button id="btnExitGame">Exit Game</button></div>
             </div>
+        </header>
+        <main>
+            <div id="control-panel" style="display:block">control-panel
+                <button onclick="showModalStartGame()">showModalStartGame</button>
+                <button onclick="hideModalStartGame()">hideModalStartGame</button>
+                <button onclick="showModalComplete()">showModalComplete</button>
+                <button onclick="hideModalComplete()">hideModalComplete</button>
+                <button onclick="showModalTimeout()">showModalTimeout</button>
+                <button onclick="hideModalTimeout()">hideModalTimeout</button>
+                <button onclick="showDivControl()">showDivControl</button>
+                <button onclick="hideDivControl()">hideDivControl</button>
+                <button onclick="flowInitializeGame()">flowInitializeGame</button>
+                <button onclick="flowStartGame()">flowStartGame</button>
+                <button onclick="flowGameSolved()">flowGameSolved</button>
+                <button onclick="flowGameTimeout()">flowGameTimeout</button>
+            </div> <!-- #TODO remove for production -->
+            <div id="cards">Cards</div>
+        </main>
+        <div id="modalStart" class="modal modal-middle-center initial-modal">
+            <h1 id="modalStartTitle">Start Game</h1>
+            <p>How many cards to play? (4 to 32)</p>
+            <input id="start-card-count" type="number" step="2" min="4" max="32" value="12">
+            <button id="btnStartGame">Start</button>
         </div>
-    </header>
-    <div id="test-panel" style="display:none">test-panel</div> <!-- #TODO remove for production -->
-    <main>
-        <div id="cards">Cards</div>
-    </main>
-    <div id="modalStart" class="modal modal-middle-center initial-modal">
-        <h1 id="modalStartTitle">Start Game</h1>
-        <p>How many cards to play? (4 to 32)</p>
-        <input id="start-card-count" type="number" step="2" min="4" max="32" value="12">
-        <button id="btnStartGame">Start</button>
-    </div>
-    <div id="modalSuccess" class="modal modal-middle-center blinking-border">
-        <div class="fade-in">
-            <h1 id="modalSuccessTitle">Success!</h1>
-            <p>You successfully matched all cards!!</p>
-            <div id="completedTime">Time to Complete:</div>
+        <div id="modalSuccess" class="modal modal-middle-center blinking-border">
+            <div class="fade-in">
+                <h1 id="modalSuccessTitle">Success!</h1>
+                <p>You successfully matched all cards!!</p>
+                <div id="completedTime">Time to Complete:</div>
+            </div>
         </div>
-    </div>
-    <div id="modalTimeout" class="modal modal-middle-center blinking-border">
-        <div class="fade-in">
-            <h1 id="modalTimeoutTitle">Timeout!</h1>
-            <p>You ran out of time.  Please try again...</p>
+        <div id="modalTimeout" class="modal modal-middle-center blinking-border">
+            <div class="fade-in">
+                <h1 id="modalTimeoutTitle">Timeout!</h1>
+                <p>You ran out of time. Please try again...</p>
+            </div>
         </div>
-    </div>
+    <script src="./game-flow.js"></script>
 </body>
 
 </html>
