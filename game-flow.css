@@ -35,7 +35,7 @@ header > h1 {
   z-index: 1;
 }
 
-#header-right {
+#timer-control {
   visibility: visible;
   background-color: green;
   color: white;

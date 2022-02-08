@@ -16,51 +16,81 @@
 </head>
 
 <body>
-        <header>
-            <h1>Emoji Concentration</h1>
-            <div id="logo">Logo</div>
-            <div id="header-right">
-                <div id="timer">Timer</div>
-                <div id="control-button"><button id="btnExitGame">Exit Game</button></div>
-            </div>
-        </header>
-        <main>
-            <div id="control-panel" style="display:block">control-panel
-                <button onclick="showModalStartGame()">showModalStartGame</button>
-                <button onclick="hideModalStartGame()">hideModalStartGame</button>
-                <button onclick="showModalComplete()">showModalComplete</button>
-                <button onclick="hideModalComplete()">hideModalComplete</button>
-                <button onclick="showModalTimeout()">showModalTimeout</button>
-                <button onclick="hideModalTimeout()">hideModalTimeout</button>
-                <button onclick="showDivControl()">showDivControl</button>
-                <button onclick="hideDivControl()">hideDivControl</button>
-                <button onclick="flowInitializeGame()">flowInitializeGame</button>
-                <button onclick="flowStartGame()">flowStartGame</button>
-                <button onclick="flowGameSolved()">flowGameSolved</button>
-                <button onclick="flowGameTimeout()">flowGameTimeout</button>
-            </div> <!-- #TODO remove for production -->
-            <div id="cards">Cards</div>
-        </main>
-        <div id="modalStart" class="modal modal-middle-center initial-modal">
-            <h1 id="modalStartTitle">Start Game</h1>
-            <p>How many cards to play? (4 to 32)</p>
-            <input id="start-card-count" type="number" step="2" min="4" max="32" value="12">
-            <button id="btnStartGame">Start</button>
+    <header>
+        <h1>Emoji Concentration</h1>
+        <div id="logo">Logo</div>
+        <div id="timer-control">
+            <div id="timer">Timer</div>
+            <div id="control-button"><button id="btnExitGame">Exit Game</button></div>
         </div>
-        <div id="modalSuccess" class="modal modal-middle-center blinking-border">
-            <div class="fade-in">
-                <h1 id="modalSuccessTitle">Success!</h1>
-                <p>You successfully matched all cards!!</p>
-                <div id="completedTime">Time to Complete:</div>
-            </div>
+    </header>
+    <main>
+        <!-- #TODO Remove control-panel code -->
+        <div id="control-panel" style="display:block">control-panel
+            <table>
+                <tr>
+                    <th>Show</th>
+                    <th>Hide</th>
+                    <th>Flow-Control</th>
+                </tr>
+                <tr>
+                    <td><button onclick="showModalStartGame()" style="display: block">showModalStartGame</button></td>
+                    <td><button onclick="hideModalStartGame()" style="display: block">hideModalStartGame</button></td>
+                    <td><button onclick="flowInitializeGame()" style="display: block">flowInitializeGame</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="showModalSuccess()" style="display: block">showModalSuccess</button></td>
+                    <td><button onclick="hideModalSuccess()" style="display: block">hideModalSuccess</button></td>
+                    <td><button onclick="flowStartGame()" style="display: block">flowStartGame</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="showModalTimeout()" style="display: block">showModalTimeout</button></td>
+                    <td><button onclick="hideModalTimeout()" style="display: block">hideModalTimeout</button></td>
+                    <td><button onclick="flowGameTimeout()" style="display: block">flowGameTimeout</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="showDivTimerControl()" style="display: block">showDivTimerControl</button></td>
+                    <td><button onclick="hideDivTimerControl()" style="display: block">hideDivTimerControl</button></td>
+                    <td><button onclick="flowGameSolved()" style="display: block">flowGameSolved</button></td>
+                </tr>
+            </table>
         </div>
-        <div id="modalTimeout" class="modal modal-middle-center blinking-border">
-            <div class="fade-in">
-                <h1 id="modalTimeoutTitle">Timeout!</h1>
-                <p>You ran out of time. Please try again...</p>
-            </div>
+        <!-- ------------------------------- -->
+        <div id="cards">Cards</div>
+    </main>
+    <div id="modalStart" class="modal modal-middle-center initial-modal">
+        <h1 id="modalStartTitle">Start Game</h1>
+        <p>How many cards to play? (4 to 32)</p>
+        <input id="start-card-count" type="number" step="2" min="4" max="32" value="12">
+        <button id="btnStartGame">Start</button>
+    </div>
+    <div id="modalSuccess" class="modal modal-middle-center blinking-border">
+        <div class="fade-in">
+            <h1 id="modalSuccessTitle">Success!</h1>
+            <p>You successfully matched all cards!!</p>
+            <div id="completedTime">Time to Complete:</div>
         </div>
+    </div>
+    <div id="modalTimeout" class="modal modal-middle-center blinking-border">
+        <div class="fade-in">
+            <h1 id="modalTimeoutTitle">Timeout!</h1>
+            <p>You ran out of time. Please try again...</p>
+        </div>
+    </div>
     <script src="./game-flow.js"></script>
+    <!-- #TODO Remove control-panel code -->
+    <script>
+        document.addEventListener('keydown', (e) => {
+            if (e.ctrlKey && e.altKey && e.shiftKey && e.code === 'KeyP') {
+                if (document.getElementById('control-panel').style.display === 'none') {
+                    document.getElementById('control-panel').style.display = 'block';
+                } else {
+                    document.getElementById('control-panel').style.display = 'none';
+                }
+            }
+        });
+    </script>
+    <!-- ------------------------------- -->
 </body>
 
 </html>
