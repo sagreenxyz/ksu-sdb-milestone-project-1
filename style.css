@@ -47,6 +47,13 @@ header{
     z-index: 1;
 }
 
+#btnExitGame {
+    font-size: 1.5em;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 5px;
+}
+
 main {
     /* border: 1px solid red; */
     display: none;
