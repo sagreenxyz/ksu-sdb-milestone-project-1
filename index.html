@@ -6,6 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- #TODO Remove control-panel code -->
+    <style>
+        #control-panel {
+            position: fixed;
+            z-index: 99;
+            background-color: lightblue;
+            bottom: 0%;
+            left: 0%;
+        }
+    </style>
+    <!-- ------------------------------- -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -25,37 +36,6 @@
         </div>
     </header>
     <main>
-        <!-- #TODO Remove control-panel code -->
-        <div id="control-panel" style="display:block">control-panel
-            <table>
-                <tr>
-                    <th>Show</th>
-                    <th>Hide</th>
-                    <th>Flow-Control</th>
-                </tr>
-                <tr>
-                    <td><button onclick="showModalStartGame()" style="display: block">showModalStartGame</button></td>
-                    <td><button onclick="hideModalStartGame()" style="display: block">hideModalStartGame</button></td>
-                    <td><button onclick="flowInitializeGame()" style="display: block">flowInitializeGame</button></td>
-                </tr>
-                <tr>
-                    <td><button onclick="showModalSuccess()" style="display: block">showModalSuccess</button></td>
-                    <td><button onclick="hideModalSuccess()" style="display: block">hideModalSuccess</button></td>
-                    <td><button onclick="flowStartGame()" style="display: block">flowStartGame</button></td>
-                </tr>
-                <tr>
-                    <td><button onclick="showModalTimeout()" style="display: block">showModalTimeout</button></td>
-                    <td><button onclick="hideModalTimeout()" style="display: block">hideModalTimeout</button></td>
-                    <td><button onclick="flowGameTimeout()" style="display: block">flowGameTimeout</button></td>
-                </tr>
-                <tr>
-                    <td><button onclick="showDivTimerControl()" style="display: block">showDivTimerControl</button></td>
-                    <td><button onclick="hideDivTimerControl()" style="display: block">hideDivTimerControl</button></td>
-                    <td><button onclick="flowGameSolved()" style="display: block">flowGameSolved</button></td>
-                </tr>
-            </table>
-        </div>
-        <!-- ------------------------------- -->
         <div id="cards">Cards</div>
     </main>
     <div id="modalStart" class="modal modal-middle-center initial-modal">
@@ -79,6 +59,36 @@
     </div>
     <script src="./game-flow.js"></script>
     <!-- #TODO Remove control-panel code -->
+    <div id="control-panel">
+        <h3>Control Panel</h3>
+        <table>
+            <tr>
+                <th>Show</th>
+                <th>Hide</th>
+                <th>Flow-Control</th>
+            </tr>
+            <tr>
+                <td><button onclick="showModalStartGame()" style="display: block">showModalStartGame</button></td>
+                <td><button onclick="hideModalStartGame()" style="display: block">hideModalStartGame</button></td>
+                <td><button onclick="flowInitializeGame()" style="display: block">flowInitializeGame</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="showModalSuccess()" style="display: block">showModalSuccess</button></td>
+                <td><button onclick="hideModalSuccess()" style="display: block">hideModalSuccess</button></td>
+                <td><button onclick="flowStartGame()" style="display: block">flowStartGame</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="showModalTimeout()" style="display: block">showModalTimeout</button></td>
+                <td><button onclick="hideModalTimeout()" style="display: block">hideModalTimeout</button></td>
+                <td><button onclick="flowGameTimeout()" style="display: block">flowGameTimeout</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="showDivTimerControl()" style="display: block">showDivTimerControl</button></td>
+                <td><button onclick="hideDivTimerControl()" style="display: block">hideDivTimerControl</button></td>
+                <td><button onclick="flowGameSolved()" style="display: block">flowGameSolved</button></td>
+            </tr>
+        </table>
+    </div>
     <script>
         document.addEventListener('keydown', (e) => {
             if (e.ctrlKey && e.altKey && e.shiftKey && e.code === 'KeyP') {
