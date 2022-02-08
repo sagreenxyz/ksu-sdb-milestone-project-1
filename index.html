@@ -36,7 +36,13 @@
         <input id="start-card-count" type="number" step="2" min="4" max="32" value="12">
         <button id="btnStartGame">Start</button>
     </div>
-    <div id="modalComplete" class="modal">modalComplete</div>
+    <div id="modalSuccess" class="modal modal-middle-center blinking-border">
+        <div class="fade-in">
+            <h1 id="modalSuccessTitle">Success!</h1>
+            <p>You successfully matched all cards!!</p>
+            <div id="completedTime">Time to Complete:</div>
+        </div>
+    </div>
     <div id="modalTimeout" class="modal">modalTimeout</div>
 </body>
 

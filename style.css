@@ -71,6 +71,10 @@ main {
   border-bottom: 5px solid black;
 }
 
+.modal > .fade-in > h1 {
+  border-bottom: 5px solid black; /* #TODO why is this not working on the game complete modal? */
+}
+
 .modal-middle-center {
   top: 50%;
   left: 50%;
@@ -78,7 +82,7 @@ main {
 }
 
 #modalStart {
-  /* display: none; */
+  display: none;
   background-color: green;
   color: white;
   border: 10px solid black;
@@ -88,8 +92,15 @@ main {
   height: 200px;
 }
 
-#modalComplete {
-  display: none;
+#modalSuccess {
+  display: block;
+  background-color: green;
+  color: white;
+  border: 10px solid black;
+  border-radius: 50px;
+  text-align: center;
+  width: 300px;
+  height: 200px;
 }
 
 #modalTimeout {
@@ -107,4 +118,17 @@ main {
   border-radius: 10px;
   font-size: 2em;
   padding: 0px 10px;
+}
+
+.fade-in {
+  animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
