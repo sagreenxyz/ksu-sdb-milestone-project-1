@@ -27,8 +27,10 @@ header>h1 {
 
 main {
     /* border: 1px solid red; */
+    display: none;
 }
 
 .modal {
     /* border: 1px solid red; */
+    display: none;
 }
