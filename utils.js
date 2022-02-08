@@ -8,3 +8,8 @@ function shuffleArray(array) {
     return array;
 }
 
+function removeAllChildren(parentNode){
+    while(parentNode.firstChild) {
+        parentNode.removeChild(parentNode.firstChild);
+    }
+}
