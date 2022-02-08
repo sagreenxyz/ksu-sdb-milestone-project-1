@@ -3,37 +3,48 @@
     padding: 0px;
 }
 
-header {
+header{
+    position: fixed;
+    width: 100%;
+}
+
+#header-content {
     /* border: 1px solid red; */
     display: grid;
     grid-template-columns: 150px 1fr 240px;
     grid-template-rows: 1fr;
 }
 
-header>h1 {
+#header-content>h1 {
     border: 1px solid red;
     text-align: center;
     position: absolute;
     width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 #logo {
     border: 1px solid red;
+    background-color: white;
     grid-column: 1;
     grid-row: 1;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1;
 }
 
 #control {
     border: 1px solid red;
+    background-color: white;
     grid-column: 3;
     grid-row: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: 1;
 }
 
 main {
