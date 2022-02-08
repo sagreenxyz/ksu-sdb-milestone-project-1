@@ -1,10 +1,11 @@
-const gameDurationLimitMS = 1000 * 60 * 5;
-const warningStartTimeMS = 1000 * 60 * 1;
+const gameDurationLimitMS = 1000 * 60 * 0.5 //5;
+const warningStartTimeMS = 1000 * 60 * 0.25 //1;
 const timeoutModalDurationMS = 1000 * 60 * 0.25;
-const modalSuccessDurationMS = 1000 * 5;
+const modalSuccessDurationMS = 1000 * 4;
 let objInterval;
 
 function showModalStartGame() {
+    removeAllChildren(cards);
     document.querySelector('main').style.opacity = '0.3';
     document.getElementById('modalStart').style.display = 'block';
     document.getElementById('modalStart').style.visibility = 'visible';
@@ -80,6 +81,7 @@ function flowInitializeGame() {
     document.getElementById('btnStartGame').addEventListener('click', () => {
         hideModalStartGame();
         showDivTimerControl();
+        startCardCount = document.getElementById('start-card-count').value;
         cardSet = genCardSet(startCardCount);
     });
 

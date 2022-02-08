@@ -74,6 +74,7 @@ function handleCardPair(card) {
     remainingCardCount = startCardCount - cardSet.getElementsByClassName('matched').length;
     if (remainingCardCount === 0) {
         // game over - all cards matched!
+        hideDivTimerControl();
         showModalSuccess();
         console.log('Game completion will occur in 4 seconds...')
     }
