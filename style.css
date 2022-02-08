@@ -1,11 +1,24 @@
 header {
+    /* border: 1px solid red; */
+    display: grid;
+    grid-template-columns: 150px 1fr 240px;
+    grid-template-rows: 1fr;
+}
+
+#logo {
+    border: 1px solid red;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+#control {
     border: 1px solid red;
 }
 
 main {
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 .modal {
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
