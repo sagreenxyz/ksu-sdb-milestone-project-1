@@ -21,6 +21,9 @@ header>h1 {
     border: 1px solid red;
     grid-column: 1;
     grid-row: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #control {
