@@ -1,4 +1,4 @@
-let startCardCount = 12;
+let startCardCount = 4;
 let remainingCardCount = 0;
 let cardSet;
 let cardPair = [];
@@ -55,7 +55,8 @@ function handleCardPair(card) {
             cardPair.forEach(elem => {
                 elem.classList.add('matched');
             }
-        )} else {
+            )
+        } else {
             cardPair.forEach(elem => {
                 elem.classList.add('unmatched');
             });
@@ -71,13 +72,9 @@ function handleCardPair(card) {
         cardPair = [];
     }
     remainingCardCount = startCardCount - cardSet.getElementsByClassName('matched').length;
-    if(remainingCardCount === 0) {
+    if (remainingCardCount === 0) {
         // game over - all cards matched!
+        showModalSuccess();
         console.log('Game completion will occur in 4 seconds...')
-        setTimeout(() => {
-            console.log('Game Complete');
-        }, 4000);
     }
 }
-
-cardSet = genCardSet(startCardCount);
