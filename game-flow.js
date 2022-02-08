@@ -78,14 +78,14 @@ function hideDivTimerControl() {
 }
 
 function flowInitializeGame() {
-    document.getElementById('btnStartGame').addEventListener('click', () => {
+    btnStartGameClick = document.getElementById('btnStartGame').addEventListener('click', () => {
         hideModalStartGame();
         showDivTimerControl();
         startCardCount = document.getElementById('start-card-count').value;
         cardSet = genCardSet(startCardCount);
     });
 
-    document.getElementById('btnExitGame').addEventListener('click', () => {
+    btnEndGameClick = document.getElementById('btnExitGame').addEventListener('click', () => {
         hideDivTimerControl();
         showModalStartGame();
     })
@@ -112,3 +112,7 @@ function flowGameTimeout() {
         showModalStartGame();
     }, 10000);
 }
+
+flowInitializeGame();
+
+
