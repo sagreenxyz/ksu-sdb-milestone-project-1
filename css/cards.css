@@ -13,7 +13,10 @@
   border: 3px solid black;
   border-radius: 5px;
   width: 150px;
-  min-height: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .card.matched {
@@ -21,18 +24,18 @@
 }
 
 .card.unmatched {
-    animation-name: blinking;
-    animation-duration: 150ms;
-    animation-timing-function: step-end;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    border-color: white;
+  animation-name: blinking;
+  animation-duration: 150ms;
+  animation-timing-function: step-end;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  border-color: white;
 }
 
 @keyframes blinking {
-    50% {
-        border-color: red;
-    }
+  50% {
+    border-color: red;
+  }
 }
 
 .card.unmatched > p {
