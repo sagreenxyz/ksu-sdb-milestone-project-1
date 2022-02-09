@@ -1,6 +1,6 @@
 # Milestone Project 1
 
-![Emoji Concentration](.\assets\2022-02-09T112106.gif)
+![Emoji Concentration](example-play.gif)
 
 [Link](https://sagreenxyz.github.io/ksu-sdb-milestone-project-1/) to hosted game.
 
