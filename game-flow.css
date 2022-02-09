@@ -26,6 +26,7 @@ header > h1 {
 
 #logo {
   background-color: white;
+  font-size: 3.5em;
   grid-column: 1;
   grid-row: 1;
   display: flex;
