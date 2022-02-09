@@ -9,6 +9,7 @@ function shuffleArray(array) {
 }
 
 function removeAllChildren(parentNode){
+    /// Attribution:  Accessed on 2022-02-03 at https://www.javascripttutorial.net/dom/manipulating/remove-all-child-nodes/
     while(parentNode.firstChild) {
         parentNode.removeChild(parentNode.firstChild);
     }
