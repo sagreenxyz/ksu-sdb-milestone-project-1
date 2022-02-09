@@ -1,5 +1,5 @@
-const gameDurationLimitMS = 1000 * 60 * 0.5 //5;
-const warningStartTimeMS = 1000 * 60 * 0.25 //1;
+const gameDurationLimitMS = 1000 * 60 * 1;
+const warningStartTimeMS = 1000 * 60 * 0.25;
 const timeoutModalDurationMS = 1000 * 60 * 0.25;
 const modalSuccessDurationMS = 1000 * 4;
 let objInterval;
