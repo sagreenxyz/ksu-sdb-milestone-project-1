@@ -6,7 +6,7 @@ let cardPair = [];
 document.getElementById('logo').innerText = getRandomEmoji()[1];
 
 function genCardSet(num) {
-    removeAllChildren(cardSet);
+    removeCardSet();
     if (!num || num <= 0 || num % 2 !== 0) {
         return;
     } // even, non-zero, non-negative number of cards to proceed
@@ -21,7 +21,7 @@ function genCardSet(num) {
 };
 
 function removeCardSet() {
-    removeAllChildren(cardSet);
+    removeAllChildren(cards);
 }
 
 function genCards(emojis) {
