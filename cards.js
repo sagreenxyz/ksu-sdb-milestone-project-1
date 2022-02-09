@@ -3,7 +3,7 @@ let remainingCardCount = 0;
 let cardSet;
 let cardPair = [];
 
-document.getElementById('logo').innerText = getRandomEmoji()[1]; // #TODO Delete this in merge
+document.getElementById('logo').innerText = getRandomEmoji()[1];
 
 function genCardSet(num) {
     if (!num || num <= 0 || num % 2 !== 0) {
@@ -16,7 +16,7 @@ function genCardSet(num) {
         i++;
         emojis.push(emoji);
     };
-    return genCards(shuffleArray(emojis)); // #TODO return DOM results of generating cards
+    return genCards(shuffleArray(emojis));
 };
 
 function genCards(emojis) {

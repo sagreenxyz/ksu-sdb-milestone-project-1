@@ -25,7 +25,6 @@ function showModalSuccess() {
     clearInterval(objInterval);
     clearTimeout(objSetTimeoutControl);
     setTimeout(() => {
-        console.log('setTimeout2')
         hideModalSuccess();
         showModalStartGame();
     }, 4000);
@@ -43,7 +42,6 @@ function showModalTimeout() {
     document.getElementById('modalTimeout').style.visibility = 'visible';
     clearInterval(objInterval);
     setTimeout(() => {
-        console.log('setTimeout3')
         hideModalTimeout();
         showModalStartGame();
     }, timeoutModalDurationMS);
@@ -69,7 +67,6 @@ function showDivTimerControl() {
         document.getElementById('timer').innerText = `Time Remaining: ${new Date(gameDurationLimitMS - (Date.now() - startTime)).toISOString().slice(14, 19)}`;
     }, 1000);
     objSetTimeoutControl = setTimeout(() => {
-        console.log('setTimeout4')
         document.getElementById('timer-control').classList.add('blinking-warning-background')
     }, warningStartTimeMS);
 }
@@ -100,7 +97,6 @@ function flowGameSolved() { // #TODO call this when unmatched cards === 0;
     clearInterval(objInterval);
     showModalSuccess();
     setTimeout(() => {
-        console.log('setTimeout5')
         hideModalSuccess();
         showModalStartGame();
     }, 10000);
@@ -109,7 +105,6 @@ function flowGameSolved() { // #TODO call this when unmatched cards === 0;
 function flowGameTimeout() {
     showModalTimeout();
     setTimeout(() => {
-        console.log('setTimeout6')
         hideModalTimeout();
         showModalStartGame();
     }, 10000);
