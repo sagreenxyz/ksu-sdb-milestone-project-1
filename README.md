@@ -1,6 +1,6 @@
 # Milestone Project 1
 
-[[link]](https://sagreenxyz.github.io/ksu-sdb-milestone-project-1/)
+[link](https://sagreenxyz.github.io/ksu-sdb-milestone-project-1/)
 
 ## Background
 
