@@ -34,13 +34,11 @@ function hideModalSuccess() {
 }
 
 function showModalTimeout() {
-    console.log('showModalTimeout')
     document.querySelector('main').style.opacity = '0.3';
     document.getElementById('modalTimeout').style.display = 'block';
     document.getElementById('modalTimeout').style.visibility = 'visible';
     clearInterval(objInterval);
     setTimeout(() => {
-        console.log('here1')
         hideModalTimeout();
         showModalStartGame();
     }, timeoutModalDurationMS);
@@ -56,11 +54,9 @@ function showDivTimerControl() {
     document.getElementById('timer-control').style.visibility = 'visible';
     let startTime = Date.now();
     document.getElementById('timer').innerText = `Time Remaining: ${new Date(gameDurationLimitMS).toISOString().slice(14, 19)}`;
-    clearTimeout(objInterval);
+    clearInterval(objInterval);
     objInterval = setInterval(() => {
         if ((Date.now() - startTime) >= gameDurationLimitMS) {
-            console.log((Date.now() - startTime))
-            console.log(gameDurationLimitMS)
             hideDivTimerControl();
             document.getElementById('timer-control').classList.remove('blinking-warning-background')
             showModalTimeout();
@@ -68,7 +64,6 @@ function showDivTimerControl() {
         document.getElementById('timer').innerText = `Time Remaining: ${new Date(gameDurationLimitMS - (Date.now() - startTime)).toISOString().slice(14, 19)}`;
     }, 1000);
     setTimeout(() => {
-        console.log('here2')
         document.getElementById('timer-control').classList.add('blinking-warning-background')
     }, warningStartTimeMS);
 }
@@ -98,7 +93,6 @@ function flowGameSolved() { // #TODO call this when unmatched cards === 0;
     clearInterval(objInterval);
     showModalSuccess();
     setTimeout(() => {
-        console.log('here3')
         hideModalSuccess();
         showModalStartGame();
     }, 10000);
@@ -107,7 +101,6 @@ function flowGameSolved() { // #TODO call this when unmatched cards === 0;
 function flowGameTimeout() {
     showModalTimeout();
     setTimeout(() => {
-        console.log('here4')
         hideModalTimeout();
         showModalStartGame();
     }, 10000);

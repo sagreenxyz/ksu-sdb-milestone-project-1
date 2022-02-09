@@ -76,6 +76,5 @@ function handleCardPair(card) {
         // game over - all cards matched!
         hideDivTimerControl();
         showModalSuccess();
-        console.log('Game completion will occur in 4 seconds...')
     }
 }
