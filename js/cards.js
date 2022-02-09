@@ -20,6 +20,10 @@ function genCardSet(num) {
     return genCards(shuffleArray(emojis));
 };
 
+function removeCardSet() {
+    removeAllChildren(cardSet);
+}
+
 function genCards(emojis) {
     let cards = document.getElementById('cards');
     emojis.forEach(elem => {
