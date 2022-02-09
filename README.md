@@ -103,6 +103,3 @@ function removeAllChildren(parentNode){
 
 ### Static Header
 When the screen becomes vertically scrollable, the header will scroll upwards with the page.  This seems to be undesireable and a simple CSS change.
-
-### Emoji Center Vertically on Cards
-The emojis are currently towards the top of each card.  Again, with a simple CSS change, this can be improved aesthetically.
