@@ -73,8 +73,10 @@
             if (e.ctrlKey && e.altKey && e.shiftKey && e.code === 'KeyP') {
                 if (document.getElementById('control-panel').style.display === 'none') {
                     document.getElementById('control-panel').style.display = 'block';
+                    document.getElementById('control-panel').style.visibility = 'visible';
                 } else {
                     document.getElementById('control-panel').style.display = 'none';
+                    document.getElementById('control-panel').style.visibility = 'hidden';
                 }
             }
         });

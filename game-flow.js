@@ -3,6 +3,7 @@ const warningStartTimeMS = 1000 * 60 * 0.25 //1;
 const timeoutModalDurationMS = 1000 * 60 * 0.25;
 const modalSuccessDurationMS = 1000 * 4;
 let objInterval;
+let objSetTimeoutControl;
 
 function showModalStartGame() {
     removeAllChildren(cards);
@@ -21,7 +22,10 @@ function showModalSuccess() {
     document.querySelector('main').style.opacity = '0.3';
     document.getElementById('modalSuccess').style.display = 'block';
     document.getElementById('modalSuccess').style.visibility = 'visible';
+    clearInterval(objInterval);
+    clearTimeout(objSetTimeoutControl);
     setTimeout(() => {
+        console.log('setTimeout2')
         hideModalSuccess();
         showModalStartGame();
     }, 4000);
@@ -39,6 +43,7 @@ function showModalTimeout() {
     document.getElementById('modalTimeout').style.visibility = 'visible';
     clearInterval(objInterval);
     setTimeout(() => {
+        console.log('setTimeout3')
         hideModalTimeout();
         showModalStartGame();
     }, timeoutModalDurationMS);
@@ -63,13 +68,15 @@ function showDivTimerControl() {
         }
         document.getElementById('timer').innerText = `Time Remaining: ${new Date(gameDurationLimitMS - (Date.now() - startTime)).toISOString().slice(14, 19)}`;
     }, 1000);
-    setTimeout(() => {
+    objSetTimeoutControl = setTimeout(() => {
+        console.log('setTimeout4')
         document.getElementById('timer-control').classList.add('blinking-warning-background')
     }, warningStartTimeMS);
 }
 
 function hideDivTimerControl() {
     document.getElementById('timer-control').style.visibility = 'hidden';
+    clearTimeout(objSetTimeoutControl);
 }
 
 function flowInitializeGame() {
@@ -93,6 +100,7 @@ function flowGameSolved() { // #TODO call this when unmatched cards === 0;
     clearInterval(objInterval);
     showModalSuccess();
     setTimeout(() => {
+        console.log('setTimeout5')
         hideModalSuccess();
         showModalStartGame();
     }, 10000);
@@ -101,6 +109,7 @@ function flowGameSolved() { // #TODO call this when unmatched cards === 0;
 function flowGameTimeout() {
     showModalTimeout();
     setTimeout(() => {
+        console.log('setTimeout6')
         hideModalTimeout();
         showModalStartGame();
     }, 10000);

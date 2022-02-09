@@ -1,5 +1,5 @@
-.cards {
-  border: 1px solid red;
+#cards {
+  /* border: 1px solid red; */
   display: flex;
   flex-wrap: wrap;
   font-size: 3.5em;
