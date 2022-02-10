@@ -77,6 +77,7 @@ function handleCardPair(card) {
         cardPair = [];
     }
     remainingCardCount = startCardCount - cardSet.getElementsByClassName('matched').length;
+    document.getElementById('progress').setAttribute('value', cardSet.getElementsByClassName('matched').length);
     if (remainingCardCount === 0) {
         // game over - all cards matched!
         hideDivTimerControl();

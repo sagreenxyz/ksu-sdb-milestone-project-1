@@ -81,6 +81,8 @@ function flowInitializeGame() {
         hideModalStartGame();
         showDivTimerControl();
         startCardCount = document.getElementById('start-card-count').value;
+        document.getElementById('progress').setAttribute('value', 0);
+        document.getElementById('progress').setAttribute('max', startCardCount);
         cardSet = genCardSet(startCardCount);
     });
 
