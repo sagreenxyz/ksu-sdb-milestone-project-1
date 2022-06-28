@@ -1,0 +1,262 @@
+// basic color palette
+
+$green: green;
+$red: red;
+$black: black;
+$white: white;
+$orange: orange;
+
+$modal-background-color: $green;
+$umnatched-card-color: $red;
+$border-color: $black;
+$bg-color: $white;
+$modal-warning-color: $orange;
+
+// fonts
+$font-family1: "Palanquin Dark", sans-serif;
+$font-family2: "Montserrat", sans-serif;
+
+// cards
+
+#cards {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 3.5em;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+  margin: 0.5em;
+}
+
+.card {
+  border: 3px solid $border-color;
+  border-radius: 5px;
+  width: 150px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @keyframes blinking {
+    50% {
+      border-color: $umnatched-card-color;
+    }
+  }
+  
+  @keyframes emoji-fadeout {
+    0% {
+      opacity: 1;
+    }
+  
+    25% {
+      opacity: 0.75;
+    }
+  
+    50% {
+      opacity: 0.5;
+    }
+  
+    75% {
+      opacity: 0.25;
+    }
+  
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  .matched {
+    background-color: $modal-background-color;
+  }
+
+  .unmatched {
+    animation-name: blinking;
+    animation-duration: 150ms;
+    animation-timing-function: step-end;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    border-color: $bg-color;
+
+    p {
+      animation-name: emoji-fadeout;
+      animation-duration: 1000ms;
+      animation-iteration-count: 1;
+      animation-timing-function: linear;
+    }
+  }
+}
+
+//   game-flow
+
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: $font-family1;
+
+}
+
+body {
+  width: 100%;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 150px 1fr 240px;
+  grid-template-rows: 1fr;
+
+  h1 {
+    font-family: $font-family2;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    $bg-color-space: nowrap;
+    transform: translateY(50%);
+  }
+}
+
+#logo {
+  background-color: $bg-color;
+  font-size: 3.5em;
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+#timer-control {
+  visibility: hidden;
+  background-color: $modal-background-color;
+  color: $bg-color;
+  border: 7px solid $border-color;
+  border-radius: 35px;
+  height: 100px;
+  margin: 5px;
+  grid-column: 3;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+#btnExitGame {
+  font-size: 1.5em;
+  border-radius: 10px;
+  padding: 0px 10px;
+}
+
+.modal {
+  border: 1px solid $umnatched-card-color;
+  position: absolute;
+  z-index: 1;
+
+  h1 {
+    border-bottom: 5px solid $border-color;
+  }
+
+  .fade-in {
+    h1 {
+      border-bottom: 5px solid $border-color;
+      /* #TODO why is this not working on the game complete modal? */
+    }
+  }
+}
+
+.modal-middle-center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#modalStart {
+  display: none;
+  background-color: $modal-background-color;
+  color: $bg-color;
+  border: 10px solid $border-color;
+  border-radius: 50px;
+  text-align: center;
+  width: 300px;
+  height: 200px;
+}
+
+#modalSuccess {
+  display: none;
+  background-color: $modal-background-color;
+  color: $bg-color;
+  border: 10px solid $border-color;
+  border-radius: 50px;
+  text-align: center;
+  width: 300px;
+  height: 200px;
+}
+
+#modalTimeout {
+  display: none;
+  border: 10px solid $border-color;
+  background-color: $modal-warning-color;
+  border-radius: 50px;
+  text-align: center;
+  width: 300px;
+  height: 200px;
+}
+
+#start-card-count {
+  text-align: center;
+  font-size: 2em;
+  margin-top: 15px;
+  border-radius: 10px;
+}
+
+#btnStartGame {
+  border-radius: 10px;
+  font-size: 2em;
+  padding: 0px 10px;
+}
+
+.fade-in {
+  animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.blinking-warning-background {
+  animation-name: blinking-warning-background;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes blinking-warning-background {
+  50% {
+    background-color: $modal-warning-color;
+  }
+}
+
+.blinking-border {
+  border-radius: 50px;
+  animation-name: blinking-border;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes blinking-border {
+  50% {
+    border-color: $bg-color;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 2s;
+}
